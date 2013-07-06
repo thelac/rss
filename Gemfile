@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
+gem "feedzirra", "~> 0.2.0.rc2", :git => 'git://github.com/pauldix/feedzirra.git'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

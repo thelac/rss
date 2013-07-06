@@ -1,4 +1,10 @@
 Rss::Application.routes.draw do
+  resources :items
+
+
+  resources :feeds
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
