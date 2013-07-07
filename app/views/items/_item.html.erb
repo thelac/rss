@@ -1,8 +1,10 @@
 <div>
-	<h2><%= item.title %></h2>
+	<h2><%= link_to(item.title, item) %></h2>
 	<p>
 		<%=raw item.description %>
 	</p>
+	<div>Read? <%= item.read? %></div>
+	
 	<span>Published: <%= item.published.split('.')[0] %></span>
 </div>
 

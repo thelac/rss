@@ -20,6 +20,9 @@
   <%= @item.feed_id %>
 </p>
 
+<p>
+	<%= link_to "Mark as read", item_path(@item) + "/toggle_read" %>
+</p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
