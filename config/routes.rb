@@ -1,4 +1,7 @@
 Rss::Application.routes.draw do
+  resources :dashboards
+
+
   resources :items
   resources :feeds
   resources :users

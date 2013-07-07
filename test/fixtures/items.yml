@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  link: MyString
-  description: MyString
+  title: "MyString"
+  link: "MyString"
+  description: "MyString"
   feed_id: 1
 
 two:
-  title: MyString
-  link: MyString
-  description: MyString
-  feed_id: 1
+  title: "MyString"
+  link: "MyString"
+  description: "MyString"
+  feed_id: 2
