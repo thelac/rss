@@ -11,10 +11,10 @@ class SessionsController < ApplicationController
 			flash.now[:error] = 'Invalid email/password combination'
 			render 'new'
 		end
-
-		
 	end
 
 	def destroy
+		sign_out
+		render 'new'
 	end
 end
