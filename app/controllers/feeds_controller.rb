@@ -63,7 +63,8 @@ class FeedsController < ApplicationController
     feed.entries.each do |item|
       @feed.items.create(description: item.summary,
         title: item.title,
-        link: item.url)
+        link: item.url,
+        published: item.published)
     end
     
     # feed.entries.each do |item|

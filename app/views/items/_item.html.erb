@@ -1,1 +1,9 @@
-<li><%= item.title %></li>
+<div>
+	<h2><%= item.title %></h2>
+	<p>
+		<%=raw item.description %>
+	</p>
+	<span>Published: <%= item.published.split('.')[0] %></span>
+</div>
+
+
