@@ -17,8 +17,6 @@ class FeedsController < ApplicationController
   def show
     @feed = Feed.find(params[:id])
 
-    puts @feed.items[1][:title]
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feed }
@@ -51,9 +49,6 @@ class FeedsController < ApplicationController
     @feed[:title] = feed.title
     @feed[:description] = feed.description
 
-    puts @feed.items
-    puts "ohai!"
-
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
@@ -63,6 +58,15 @@ class FeedsController < ApplicationController
         format.json { render json: @feed.errors, status: :unprocessable_entity }
       end
     end
+
+    feed.entries.each do |item|
+      @item = Item.new(description: item.summary, 
+        title: item.title, 
+        link: item.url,
+        feed_id: @feed.id)
+      @item.save
+    end
+
   end
 
   # PUT /feeds/1
