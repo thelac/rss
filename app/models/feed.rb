@@ -1,7 +1,7 @@
 class Feed < ActiveRecord::Base
   attr_accessible :description, :link, :title, :user_id
-  belongs_to :user
-  has_many :items
+  belongs_to :user, inverse_of: :feeds
+  has_many :items, inverse_of: :feed, counter_cache: true
 
   validates :title, presence: true, length: { maximum: 40 }
   validates :link, presence: true

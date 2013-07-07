@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
-  has_many :feeds, dependent: :destroy
+  has_many :feeds, inverse_of: :user, dependent: :destroy
 
   before_save :create_remember_token
   before_save { |user| user.email = email.downcase }

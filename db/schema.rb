@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130707014819) do
+ActiveRecord::Schema.define(:version => 20130707035204) do
+
+  create_table "dashboards", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
@@ -20,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130707014819) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "user_id"
+    t.integer  "items_count"
   end
 
   create_table "items", :force => true do |t|
@@ -38,12 +45,7 @@ ActiveRecord::Schema.define(:version => 20130707014819) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-  end
-
-  create_table "dashboards", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "feeds_count"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
