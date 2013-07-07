@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706220436) do
+ActiveRecord::Schema.define(:version => 20130706230927) do
 
   create_table "feeds", :force => true do |t|
     t.string   "title"
@@ -42,6 +42,5 @@ ActiveRecord::Schema.define(:version => 20130706220436) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-
 
 end
