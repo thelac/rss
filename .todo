@@ -1,30 +1,35 @@
+NEXT
+Polling to update feeds / refactoring
+Star items
+
+read / unread
+Readability
+
+THE DB
 Implement full rss spec
-Add user - feed relationship
+
 Secure authentication
 Show items in feed
 Show commingled items from feeds
-read / unread
-Star items
+Tags
 See starred items
 Items expandable
-Sharing
-Readability
 iPhone app
 Item highlighting - semantic information
 Search through feed items
-Facebook
-Twitter
-Instagram
-LinkedIn
-Google+
-Foursquare
-Venmo
-Polling to update feeds
+Sharing (Facebook, Twitter, Instagram, LinkedIn, Google+, Foursquare, Venmo)
 Email integration
-Styling
-Bootstrap
-Keyboard shortcuts
-Counter cache
+
+API
+Unread counts
 
 CLEANUP
 Merge db migrates
+
+OPTIMIZATIONS
+Counter cache
+Add user - feed relationship
+
+UX
+Keyboard shortcuts
+Bootstrap / styling

@@ -6,7 +6,9 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem "feedzirra", "~> 0.2.0.rc2", :git => 'git://github.com/pauldix/feedzirra.git'
+# gem 'feedzirra', '~> 0.2.0.rc2', :git => 'git://github.com/pauldix/feedzirra.git'
+# gem 'ruby-readability', :git => 'git://github.com/cantino/ruby-readability.git', :require => 'readability'
+gem 'nokogiri'
 
 group :development do
 	gem 'sqlite3'

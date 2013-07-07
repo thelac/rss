@@ -14,6 +14,7 @@ Rss::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signup', to: 'users#new'
+  match 'test', to: 'static_pages#test'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

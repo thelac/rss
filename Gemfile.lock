@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/cantino/ruby-readability.git
+  revision: bde8f73422a6aaac42feda72053b28947c39dc38
+  specs:
+    ruby-readability (0.5.7)
+      guess_html_encoding (>= 0.0.4)
+      nokogiri (>= 1.4.2)
+
+GIT
   remote: git://github.com/pauldix/feedzirra.git
   revision: 80cd35766e40ee3058db1c5c0c25448baeea4212
   specs:
@@ -53,6 +61,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    guess_html_encoding (0.0.9)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -127,8 +136,10 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   feedzirra (~> 0.2.0.rc2)!
   jquery-rails
+  nokogiri
   pg (= 0.12.2)
   rails (= 3.2.13)
+  ruby-readability!
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
