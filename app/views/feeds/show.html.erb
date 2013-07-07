@@ -15,5 +15,7 @@
   <%= @feed.description %>
 </p>
 
+<ul><%= render @feed.items %></ul>
+
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
