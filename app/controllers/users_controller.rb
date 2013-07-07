@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 			sign_in @user
 			flash[:success] = "Welcome!"
 			redirect_to @user
+			@user.create_dashboard()
 		else
 			render 'new'
 		end
