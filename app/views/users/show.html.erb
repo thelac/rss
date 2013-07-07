@@ -2,4 +2,5 @@
 	<%= @user.name %>
 </h1>
 
-<%= render 'shared/feed_list' %>
+<%= link_to("New feed", new_feed_path) %>
+<%= render 'feeds/feed_list' %>
