@@ -48,6 +48,7 @@ class FeedsController < ApplicationController
 
     @feed[:title] = feed.title
     @feed[:description] = feed.description
+    @feed[:user_id] = current_user.id
 
     respond_to do |format|
       if @feed.save
