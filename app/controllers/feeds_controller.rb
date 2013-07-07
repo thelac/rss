@@ -60,12 +60,18 @@ class FeedsController < ApplicationController
     end
 
     feed.entries.each do |item|
-      @item = Item.new(description: item.summary, 
-        title: item.title, 
-        link: item.url,
-        feed_id: @feed.id)
-      @item.save
+      @feed.items.create(description: item.summary,
+        title: item.title,
+        link: item.url)
     end
+    
+    # feed.entries.each do |item|
+    #   @item = Item.new(description: item.summary, 
+    #     title: item.title, 
+    #     link: item.url,
+    #     feed_id: @feed.id)
+    #   @item.save
+    # end
 
   end
 

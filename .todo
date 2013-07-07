@@ -3,6 +3,7 @@ Add user - feed relationship
 Secure authentication
 Show items in feed
 Show commingled items from feeds
+read / unread
 Star items
 See starred items
 Items expandable
@@ -22,3 +23,4 @@ Polling to update feeds
 Email integration
 Styling
 Bootstrap
+Keyboard shortcuts
