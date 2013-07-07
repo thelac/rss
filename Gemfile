@@ -5,10 +5,13 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 gem "feedzirra", "~> 0.2.0.rc2", :git => 'git://github.com/pauldix/feedzirra.git'
 
+group :development do
+	gem 'sqlite3'
+
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
