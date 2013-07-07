@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130707043206) do
     t.integer  "feed_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "published"
   end
 
   create_table "users", :force => true do |t|
