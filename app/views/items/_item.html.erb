@@ -3,7 +3,11 @@
 	<p>
 		<%=raw item.description %>
 	</p>
-	<span>Published: <%= item.published.split('.')[0] %></span>
+	<span>Published: 
+		<% if item.published != nil %>
+	 	<%= item.published.split('.')[0] %>
+	 	<% end %>
+	 </span>
 </div>
 
 

@@ -47,7 +47,7 @@ class FeedsController < ApplicationController
     feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
 
     @feed[:title] = feed.title
-    @feed[:description] = feed.description
+    @feed[:description] = feeds.description
     @feed[:user_id] = current_user.id
 
     respond_to do |format|
@@ -81,16 +81,22 @@ class FeedsController < ApplicationController
   # PUT /feeds/1.json
   def update
     @feed = Feed.find(params[:id])
+    feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
+    most_recent = @feed.items.first
+    counter = 0
 
-    respond_to do |format|
-      if @feed.update_attributes(params[:feed])
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
+    feed.entries.each do |item|
+          break if item.title = most_recent.title
+          @feed.items.create( description: item.summary,
+                              title: item.title,
+                              link: item.url,
+                              published: item.published)
+          counter += 1
+        end
+    if counter > 0
+      flash[:notice] = "New items!"
     end
+    redirect_to @feed
   end
 
   # DELETE /feeds/1

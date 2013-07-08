@@ -15,6 +15,8 @@
   <%= @feed.description %>
 </p>
 
+<%= link_to("Update", @feed, method: "put") %>
+
 <%= render @feed.items %>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
