@@ -80,4 +80,14 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def toggle_read
+    @item = Item.find(params[:item_id])
+    @item.toggle_read
+
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+    end
+  end
 end

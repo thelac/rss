@@ -1,0 +1,12 @@
+.DS_Store
+.rvmrc
+TODO
+Gemfile.lock
+rdoc/
+doc/
+pkg/
+coverage/
+.rbx
+.bundle
+*.swp
+*.swo

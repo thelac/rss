@@ -1,7 +1,9 @@
 Rss::Application.routes.draw do
 
   resources :dashboards
-  resources :items
+  resources :items do
+    match '/toggle_read', to: 'items#toggle_read'
+  end
   resources :feeds
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -14,6 +16,7 @@ Rss::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signup', to: 'users#new'
+  match '/test', to: 'static_pages#test'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

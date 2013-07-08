@@ -1,4 +1,17 @@
 class Item < ActiveRecord::Base
-  attr_accessible :description, :feed_id, :link, :title, :published
+  attr_accessible :description, :feed_id, :link, :title, :published, :read
   belongs_to :feed, inverse_of: :items
+
+	def read?
+		self.read
+	end
+
+	def toggle_read
+		self.read = !self.read
+
+		## TODO: Test whether this is necessary
+		## TODO: Saving every time to DB is really bad
+		self.save
+	end
+
 end
