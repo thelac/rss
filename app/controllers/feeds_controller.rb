@@ -1,5 +1,3 @@
-require 'feedzirra'
-
 class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
@@ -47,7 +45,7 @@ class FeedsController < ApplicationController
     feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
 
     @feed[:title] = feed.title
-    @feed[:description] = feeds.description
+    @feed[:description] = feed.description
     @feed[:user_id] = current_user.id
 
     respond_to do |format|
@@ -64,7 +62,8 @@ class FeedsController < ApplicationController
       @feed.items.create(description: item.summary,
         title: item.title,
         link: item.url,
-        published: item.published)
+        published: item.published,
+        read: false)
     end
     
     # feed.entries.each do |item|
@@ -90,11 +89,14 @@ class FeedsController < ApplicationController
           @feed.items.create( description: item.summary,
                               title: item.title,
                               link: item.url,
-                              published: item.published)
+                              published: item.published,
+                              read: false)
           counter += 1
         end
     if counter > 0
       flash[:notice] = "New items!"
+    else
+      flash[:error] = "No new items :("
     end
     redirect_to @feed
   end

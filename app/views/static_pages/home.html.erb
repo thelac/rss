@@ -1,1 +1,9 @@
-<p>Eventually stuff will go here</p>
+<div class="center" id="start-info">
+	<h1 class="lander">YARSSR</h1>
+	<h2>An RSS Reader for no one.</h2>
+
+	<% if !signed_in?%>
+		<%= link_to("Sign up now!", signup_path, 
+					class: "btn btn-large btn-primary") %>
+	<% end %>
+</div>

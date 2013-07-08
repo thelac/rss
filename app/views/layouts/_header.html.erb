@@ -1,9 +1,9 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "YARSSR", '#', id: "logo" %>
+      <%= link_to "YARSSR", root_url, class: "brand" %>
       <nav>
-        <ul class="nav pull-right">
+        <ul class="nav">
           <li><%= link_to "Home",   root_url  %></li>
           <% if signed_in? %>
             <li><%= link_to "Account", current_user %></li>

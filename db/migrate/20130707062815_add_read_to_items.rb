@@ -1,5 +1,5 @@
 class AddReadToItems < ActiveRecord::Migration
   def change
-    add_column :items, :read, :boolean, :default => 0
+    add_column :items, :read, :boolean, :default => false
   end
 end

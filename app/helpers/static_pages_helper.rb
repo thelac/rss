@@ -1,4 +1,3 @@
-require 'ruby-readability'
 require 'open-uri'
 
 module StaticPagesHelper
