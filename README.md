@@ -36,6 +36,7 @@
 
 ### CLEANUP
 - Merge db migrates
+- Update to rails 4
 
 ### OPTIMIZATIONS
 - Counter cache
