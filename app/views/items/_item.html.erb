@@ -1,5 +1,6 @@
-<div>
-	<h2><%= link_to(item.title, item) %></h2>
+<% if item.read? %>
+<div class="item">
+	<%= link_to(item.title, item, class: "read-item") %></h5>
 	<p>
 		<%=raw item.description %>
 	</p>
@@ -10,5 +11,20 @@
 	 </span>
 	<div>Read? <%= item.read? %></div>
 </div>
-
+<% else %>
+<div class="item">
+	<div class="unread-item"><%= link_to(item.title, item) %></div>
+	<p>
+		<%=raw item.description %>
+	</p>
+	<div class="published">
+		Published: 
+		<% if item.published != nil %>
+	 	<%= item.published.split('.')[0] %>
+	 	<% end %>
+	 </div>
+	 
+	<div class="read-mark">Read? <%= item.read? %></div>
+</div>
+<% end %>
 

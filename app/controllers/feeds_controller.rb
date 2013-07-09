@@ -1,3 +1,4 @@
+include ActionView::Helpers::TextHelper
 class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
@@ -47,18 +48,16 @@ class FeedsController < ApplicationController
     @feed[:title] = feed.title
     @feed[:description] = feed.description
     @feed[:user_id] = current_user.id
-
-    respond_to do |format|
-      if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
-        format.json { render json: @feed, status: :created, location: @feed }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
+    
+    if @feed.save
+      flash[:success] = "Feed created!"
+      redirect_to @feed  
+    else
+      flash.now[:error] = "Something wrong!"
+      render new
     end
 
-    feed.entries.each do |item|
+    feed.entries.reverse_each do |item|
       @feed.items.create(description: item.summary,
         title: item.title,
         link: item.url,
@@ -81,11 +80,16 @@ class FeedsController < ApplicationController
   def update
     @feed = Feed.find(params[:id])
     feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
-    most_recent = @feed.items.first
+    most_recent = @feed.items.last
     counter = 0
+    itemlist = []
 
     feed.entries.each do |item|
-          break if item.title = most_recent.title
+      break if item.title == most_recent.title
+      itemlist += [item]
+    end
+
+    itemlist.reverse_each do |item|
           @feed.items.create( description: item.summary,
                               title: item.title,
                               link: item.url,
@@ -94,7 +98,8 @@ class FeedsController < ApplicationController
           counter += 1
         end
     if counter > 0
-      flash[:notice] = "New items!"
+      pluralHelper = pluralize(counter, "item").split
+      flash[:success] = pluralHelper[0] + " new " + pluralHelper[1] + "!"
     else
       flash[:error] = "No new items :("
     end

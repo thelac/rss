@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/pauldix/feedzirra.git
+  revision: 80cd35766e40ee3058db1c5c0c25448baeea4212
+  specs:
+    feedzirra (0.2.0.rc2)
+      curb (~> 0.8.1)
+      loofah (~> 1.2.1)
+      nokogiri (~> 1.5.3)
+      sax-machine (~> 0.2.0.rc1)
+
+GIT
   remote: http://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 9a0a31096ecee572638132d5ed94bc5500f74330
   specs:
@@ -49,6 +59,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.6)
+    curb (0.8.4)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -65,6 +76,8 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.3.1)
     libv8 (3.11.8.17)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -99,6 +112,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    sax-machine (0.2.0.rc1)
+      nokogiri (~> 1.5.2)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -127,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   coffee-rails (~> 3.2.1)
+  feedzirra (~> 0.2.0.rc2)!
   jquery-rails
   less-rails
   nokogiri

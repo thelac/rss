@@ -1,1 +1,3 @@
-<li><%= link_to(feed.title, feed) %> | <%= link_to("Update", feed, method: "put") %></li>
+<tr><td><%= link_to(feed.title, feed) %></td>
+	<td> <%= link_to("Update", feed, method: "put", class: "btn btn-mini", id:"updatefeed") %></td>
+</tr>

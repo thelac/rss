@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Title:</b>
   <%= @feed.title %>
@@ -15,9 +13,9 @@
   <%= @feed.description %>
 </p>
 
-<%= link_to("Update", @feed, method: "put") %>
+<%= link_to("Update", @feed, method: "put", class: "btn btn-primary btn-small") %>
 
-<%= render @feed.items %>
+<%= render @feed.items.reverse %>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
