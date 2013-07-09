@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'nokogiri'
-gem 'bootstrap_helper'
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development do
 	gem 'sqlite3'
@@ -18,7 +18,6 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bcrypt-ruby', '3.0.1'
-  gem 'twitter-bootstrap-rails'
   gem "less-rails"
   gem "therubyracer"
   gem 'simple_form'
