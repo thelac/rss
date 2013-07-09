@@ -18,6 +18,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bcrypt-ruby', '3.0.1'
   gem 'twitter-bootstrap-rails'
+  gem 'bootstrap_helper'
   gem "less-rails"
   gem "therubyracer"
   gem 'simple_form'
