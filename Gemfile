@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'nokogiri'
+gem 'bootstrap_helper'
 
 group :development do
 	gem 'sqlite3'
@@ -18,11 +19,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bcrypt-ruby', '3.0.1'
   gem 'twitter-bootstrap-rails'
-  gem 'bootstrap_helper'
   gem "less-rails"
   gem "therubyracer"
   gem 'simple_form'
-  
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
