@@ -22,8 +22,7 @@ group :assets do
   gem "less-rails"
   gem "therubyracer"
   gem 'simple_form'
-  gem 'sass-rails'
-
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
