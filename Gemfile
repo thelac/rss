@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 gem 'nokogiri'
 gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "feedzirra", "~> 0.2.0.rc2", :git => 'git://github.com/pauldix/feedzirra.git'
+gem 'jquery-ui-rails'
+
 
 group :development do
 	gem 'sqlite3'

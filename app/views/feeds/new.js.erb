@@ -1,1 +1,3 @@
-$('#new-link').hide().after('<%= j render 'form' %>')
+var $form = $('<%= j render 'form' %>').hide();
+$('#new-link').hide().after($form);
+$('#new-form').show('slide', { direction: 'up' })
