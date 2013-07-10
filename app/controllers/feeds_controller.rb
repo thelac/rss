@@ -27,10 +27,6 @@ class FeedsController < ApplicationController
   def new
     @feed = Feed.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @feed }
-    end
   end
 
   # GET /feeds/1/edit
