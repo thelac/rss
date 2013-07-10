@@ -1,7 +1,8 @@
-<div class="span3" id="userbox">
+<div class="span3 center" id="userbox">
 	<h1><%= @user.name %></h1>
-</div>
-<div class="span6 feedlist">
 	<%= link_to("New feed", new_feed_path, remote: true, class: "btn btn-small", id:"new-link") %>
+</div>
+<div class="span6" id="feed-list">
+	
 	<%= render 'feeds/feed_list' %>
 </div>

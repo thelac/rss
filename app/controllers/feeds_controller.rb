@@ -26,7 +26,6 @@ class FeedsController < ApplicationController
   # GET /feeds/new.json
   def new
     @feed = Feed.new
-
   end
 
   # GET /feeds/1/edit
@@ -45,12 +44,19 @@ class FeedsController < ApplicationController
     @feed[:description] = feed.description
     @feed[:user_id] = current_user.id
     
-    if @feed.save
-      flash[:success] = "Feed created!"
-      redirect_to @feed  
-    else
-      flash.now[:error] = "Something wrong!"
-      render new
+    success = @feed.save
+
+    respond_to do |format|
+      format.html{
+        if success
+          flash[:success] = "Feed created!"
+          redirect_to @feed  
+        else
+          flash.now[:error] = "Something wrong!"
+          render new
+        end
+      }
+      format.js
     end
 
     feed.entries.reverse_each do |item|

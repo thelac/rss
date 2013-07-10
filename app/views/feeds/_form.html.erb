@@ -1,29 +1,8 @@
-<%= form_for(@feed) do |f| %>
-  <% if @feed.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@feed.errors.count, "error") %> prohibited this feed from being saved:</h2>
+<%= simple_form_for @feed, remote: true, :html => { :id => 'new-form' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :link %>
+  <%= f.input :description %>
 
-      <ul>
-      <% @feed.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.submit "Create feed", class: "btn btn-primary btn-small" %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
