@@ -1,8 +1,8 @@
-<p>
-  <b>User:</b>
-  <%= @dashboard.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_dashboard_path(@dashboard) %> |
-<%= link_to 'Back', dashboards_path %>
+<div class="span3">
+<h4>Feed List</h4>
+	<%= link_to("New feed", new_feed_path, remote: true, class: "btn btn-small", id:"new-link") %>
+	<%= render 'feeds/feed_list' %>
+</div>
+<div class="span9" id="item-list">
+	TODO REMOVE<%= render(Feed.first.items.reverse) %>
+</div>

@@ -1,30 +1,10 @@
+
 <% if item.read? %>
-<div class="item">
-	<%= link_to(item.title, item, class: "read-item") %></h5>
-	<p>
-		<%=raw item.description %>
-	</p>
-	<span>Published: 
-		<% if item.published != nil %>
-	 	<%= item.published.split('.')[0] %>
-	 	<% end %>
-	 </span>
-	<div>Read? <%= item.read? %></div>
-</div>
+<div class="closed-item read", id="item-<%= item.id%>">
 <% else %>
-<div class="item">
-	<div class="unread-item"><%= link_to(item.title, item) %></div>
-	<p>
-		<%=raw item.description %>
-	</p>
-	<div class="published">
-		Published: 
-		<% if item.published != nil %>
-	 	<%= item.published.split('.')[0] %>
-	 	<% end %>
-	 </div>
-	 
-	<div class="read-mark">Read? <%= item.read? %></div>
-</div>
+<div class="closed-item unread", id="item-<%= item.id%>">
 <% end %>
+
+	<%= link_to(item.title, item, remote: true) %>
+</div>
 

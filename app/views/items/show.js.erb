@@ -1,0 +1,36 @@
+function htmlDecode(input){
+  var e = document.createElement('div');
+  e.innerHTML = input;
+  return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+}
+
+<% if @item.published != nil %>
+ 	var published = '<%= @item.published.split('.')[0] %>';
+<% end %>
+
+
+if (($('#item-<%= @item.id%>').attr('class') == 'closed-item unread')
+		|| ($('#item-<%= @item.id%>').attr('class') =='closed-item read')){
+	var html = '<%= @item.description %>';
+	var escape = htmlDecode(html);
+
+	<% @item.read = true %>
+	<% @item.save %>
+
+	$('.item-text').remove();
+
+	$('#item-<%= @item.id%>')
+		.attr('class', 'opened-item read')
+		.after('<div class="item-text">' + escape + '</div>');
+
+	$('.item-text').append('<div class="published">' + published + '</div>');
+}
+else
+{
+	$('.item-text').remove();
+	$('#item-<%= @item.id%>')
+		.html('<%= link_to(@item.title, 
+				@item, remote: true) %>' )
+		.attr('id', 'item-<%= @item.id%>')
+		.attr('class', 'closed-item read');
+}

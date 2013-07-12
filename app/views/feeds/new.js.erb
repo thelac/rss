@@ -1,3 +1,18 @@
 var $form = $('<%= j render 'form' %>').hide();
-$('#new-link').hide().after($form);
-$('#new-form').show('slide', { direction: 'up' })
+
+console.log($('#new-link').length);
+if ($('#new-form').length) {
+
+	$('#new-form').hide('blind', { direction: 'up' }, function(){
+
+		$('#new-form').remove();
+
+	});
+
+	$('#new-link').text('New feed');
+}
+
+else{
+	$('#new-link').text('Cancel').after($form);
+	$('#new-form').show('blind', { direction: 'up' });
+}

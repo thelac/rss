@@ -14,10 +14,11 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1.json
   def show
     @dashboard = Dashboard.find(params[:id])
-
+    @user = @dashboard.user
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @dashboard }
+      format.js
     end
   end
 
