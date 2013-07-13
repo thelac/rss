@@ -5,8 +5,7 @@
 		<span class="unread-count", id="unread-<%= feed.id %>")><%= feed.items.where("read = ?", false).count %></span>
 	</td>
 
-
 	<td>
-		<%= link_to("Update", feed, method: "put", class: "btn btn-mini", id:"updatefeed") %>
+		<%= link_to("X", feed, method: "delete", class: "btn btn-danger btn-mini", data: { confirm: 'Are you sure?' }, id:"delete-feed") %>
 	</td>
 </tr>

@@ -54,7 +54,7 @@ class FeedsController < ApplicationController
         published: item.published,
         read: false)
     end
-        
+
     respond_to do |format|
       format.html{
         if success
@@ -108,7 +108,7 @@ class FeedsController < ApplicationController
     @feed.destroy
 
     respond_to do |format|
-      format.html { redirect_to feeds_url }
+      format.html { redirect_to current_user.dashboard }
       format.json { head :no_content }
     end
   end
