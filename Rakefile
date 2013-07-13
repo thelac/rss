@@ -13,4 +13,5 @@ task :deploy do
 	sh "git commit -m '#{message}'"
 	sh "git push -f heroku master"
 	sh "git push -f origin master"
+	
 end
