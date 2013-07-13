@@ -49,6 +49,7 @@ Implement full rss spec
 Secure authentication
 iPhone app
 Email integration
+OPML import/export
 
 ## COMPLETED
 readability integration (basic shit)
