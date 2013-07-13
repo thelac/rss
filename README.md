@@ -8,9 +8,9 @@
 ### Next
 - Star items
 - Enforce feed uniqueness
-- Add delete button
-- Move Update
 - Implement scheduled polling
+- Dashboard default view should have items from all feeds
+- Write update and delete AJAX
 
 ### THINGS TO MAKE OUR DEV LIVES EASIER
 - Add basic stuff to db:reset (e.g., user signins)
