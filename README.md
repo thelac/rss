@@ -6,10 +6,11 @@
 ## To dos
 
 ### Next
-- Polling to update feeds / refactoring
 - Star items
-
-- Fake RSS feed
+- Enforce feed uniqueness
+- Add delete button
+- Move Update
+- Implement scheduled polling
 
 ### THINGS TO MAKE OUR DEV LIVES EASIER
 - Add basic stuff to db:reset (e.g., user signins)
