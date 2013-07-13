@@ -5,3 +5,12 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rss::Application.load_tasks
+
+task :deploy do	
+	message = ENV['message'] || "update #{Time.now.utc}"
+	sh "bundle install"
+	sh "git add --ignore-removal ."
+	sh "git commit -m '#{message}'"
+	sh "git push -f heroku master"
+	sh "git push -f origin master"
+end
