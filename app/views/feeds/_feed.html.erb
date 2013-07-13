@@ -1,3 +1,12 @@
-<tr><td><%= link_to(feed.title, feed, remote: true, data: {feed_id: feed.id}, id: "feed-#{feed.id}") %></td>
-	<td> <%= link_to("Update", feed, method: "put", class: "btn btn-mini", id:"updatefeed") %></td>
+<tr>
+
+	<td>
+		<%= link_to(feed.title, feed, remote: true, id: "feed-#{feed.id}") %>
+		<span class="unread-count", id="unread-<%= feed.id %>")><%= feed.items.where("read = ?", false).count %></span>
+	</td>
+
+
+	<td>
+		<%= link_to("Update", feed, method: "put", class: "btn btn-mini", id:"updatefeed") %>
+	</td>
 </tr>

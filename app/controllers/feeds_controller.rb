@@ -47,6 +47,14 @@ class FeedsController < ApplicationController
     
     success = @feed.save
 
+    feed.entries.reverse_each do |item|
+      @feed.items.create(description: item.summary,
+        title: item.title,
+        link: item.url,
+        published: item.published,
+        read: false)
+    end
+        
     respond_to do |format|
       format.html{
         if success
@@ -59,22 +67,6 @@ class FeedsController < ApplicationController
       }
       format.js
     end
-
-    feed.entries.reverse_each do |item|
-      @feed.items.create(description: item.summary,
-        title: item.title,
-        link: item.url,
-        published: item.published,
-        read: false)
-    end
-    
-    # feed.entries.each do |item|
-    #   @item = Item.new(description: item.summary, 
-    #     title: item.title, 
-    #     link: item.url,
-    #     feed_id: @feed.id)
-    #   @item.save
-    # end
 
   end
 

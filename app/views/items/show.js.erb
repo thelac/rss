@@ -8,14 +8,20 @@ function htmlDecode(input){
  	var published = '<%= @item.published.split('.')[0] %>';
 <% end %>
 
+var bufferClass = $('#item-<%= @item.id%>').attr('class');
 
-if (($('#item-<%= @item.id%>').attr('class') == 'closed-item unread')
-		|| ($('#item-<%= @item.id%>').attr('class') =='closed-item read')){
+if ((bufferClass == 'closed-item unread')
+		|| (bufferClass =='closed-item read')){
 	var html = '<%= @item.description %>';
 	var escape = htmlDecode(html);
 
-	<% @item.read = true %>
-	<% @item.save %>
+	// handle updating unread stuff
+	if (bufferClass == 'closed-item unread') {
+		<% @item.read = true %>
+		<% @item.save %>
+		$('#unread-<%= @item.feed.id %>')
+			.html('<%= @item.feed.items.where("read = ?", false).count %>');
+	}
 
 	$('.item-text').remove();
 
@@ -23,6 +29,7 @@ if (($('#item-<%= @item.id%>').attr('class') == 'closed-item unread')
 		.attr('class', 'opened-item read')
 		.after('<div class="item-text">' + escape + '</div>');
 
+	$
 	$('.item-text').append('<div class="published">' + published + '</div>');
 }
 else

@@ -1,12 +1,9 @@
 var $form = $('<%= j render 'form' %>').hide();
 
-console.log($('#new-link').length);
 if ($('#new-form').length) {
 
 	$('#new-form').hide('blind', { direction: 'up' }, function(){
-
 		$('#new-form').remove();
-
 	});
 
 	$('#new-link').text('New feed');
