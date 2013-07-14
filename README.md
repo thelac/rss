@@ -9,9 +9,9 @@
 - Star items
 - Enforce feed uniqueness
 - Dashboard default view should have items from all feeds
-- Write update and delete AJAX
 
 ### UX
+- Write update and delete AJAX
 - Keyboard shortcuts
 - Tags
 - Item highlighting - semantic information
