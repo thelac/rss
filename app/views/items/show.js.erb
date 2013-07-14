@@ -36,8 +36,5 @@ else
 {
 	$('.item-text').remove();
 	$('#item-<%= @item.id%>')
-		.html('<%= link_to(@item.title, 
-				@item, remote: true) %>' )
-		.attr('id', 'item-<%= @item.id%>')
 		.attr('class', 'closed-item read');
 }

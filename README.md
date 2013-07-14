@@ -33,9 +33,10 @@
 - Update to rails 4
 
 ### OPTIMIZATIONS
-- Counter cache
+- Counter cache (unread / read, etc)
 - Add user - feed relationship
 - DB caching
+- CSS sprites
 
 ### THE FULL MONTY
 Implement full rss spec

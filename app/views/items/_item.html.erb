@@ -6,5 +6,10 @@
 <% end %>
 
 	<%= link_to(item.title, item, remote: true) %>
-</div>
 
+	<% if item.starred? %>
+	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "starred", :id => "star-" + item.id.to_s )%>
+	<% else %>
+	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "unstarred", :id => "star-" + item.id.to_s )%>
+	<% end %>
+</div>

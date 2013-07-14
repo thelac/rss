@@ -3,6 +3,7 @@ Rss::Application.routes.draw do
   resources :dashboards
   resources :items do
     match '/toggle_read', to: 'items#toggle_read'
+    match '/toggle_starred', to: 'items#toggle_starred'
   end
   resources :feeds
   resources :users
