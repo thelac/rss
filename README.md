@@ -8,7 +8,6 @@
 ### Next
 - Star items
 - Enforce feed uniqueness
-- Implement scheduled polling
 - Dashboard default view should have items from all feeds
 - Write update and delete AJAX
 
@@ -43,7 +42,9 @@ Secure authentication
 iPhone app
 Email integration
 OPML import/export
+Deply cron jobs
 
 ## COMPLETED
 readability integration (basic shit)
 read / unread
+Implement scheduled polling
