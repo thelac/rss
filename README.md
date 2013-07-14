@@ -6,20 +6,25 @@
 ## To dos
 
 ### Next
-- Star items
+#### Daniel
 - Enforce feed uniqueness
+- Add user - feed relationship
+- Default db population when reset
+- Readability
+- OPML import
+
+#### Michael
 - Dashboard default view should have items from all feeds
 - Write update and delete AJAX
+- Item highlighting - semantic information
 
 ### UX
 - Keyboard shortcuts
 - Tags
-- Item highlighting - semantic information
 - Search through feed items
 
 #### Views
 - See starred items
-- Show commingled items from feeds
 
 #### Integrations
 - Sharing (Facebook, Twitter, Instagram, LinkedIn, Google+, Foursquare, Venmo)
@@ -33,19 +38,19 @@
 
 ### OPTIMIZATIONS
 - Counter cache (unread / read, etc)
-- Add user - feed relationship
 - DB caching
 - CSS sprites
 
 ### THE FULL MONTY
-Implement full rss spec
-Secure authentication
-iPhone app
-Email integration
-OPML import/export
-Deply cron jobs
+- Implement full rss spec
+- Secure authentication
+- iPhone app
+- Email integration
+- OPML import/export
+- Deply cron jobs
 
 ## COMPLETED
-readability integration (basic shit)
-read / unread
-Implement scheduled polling
+- readability integration (basic shit)
+- read / unread
+- Implement scheduled polling
+- Star items

@@ -23,5 +23,7 @@ task :deploy do
 	sh "git commit -m '#{message}'"
 	sh "git push -f heroku master"
 	sh "git push -f origin master"
+	sh "heroku pg:reset DATABASE"
+	sh "heroku run rake db:migrate"
 	sh "heroku open -app cryptic-reef-9153"
 end
