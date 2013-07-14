@@ -74,30 +74,16 @@ class FeedsController < ApplicationController
   # PUT /feeds/1.json
   def update
     @feed = Feed.find(params[:id])
-    feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
-    most_recent = @feed.items.last
-    counter = 0
-    itemlist = []
 
-    feed.entries.each do |item|
-      break if item.title == most_recent.title
-      itemlist += [item]
-    end
+    counter = @feed.update
 
-    itemlist.reverse_each do |item|
-          @feed.items.create( description: item.summary,
-                              title: item.title,
-                              link: item.url,
-                              published: item.published,
-                              read: false)
-          counter += 1
-        end
     if counter > 0
       pluralHelper = pluralize(counter, "item").split
       flash[:success] = pluralHelper[0] + " new " + pluralHelper[1] + "!"
     else
       flash[:error] = "No new items :("
     end
+    
     redirect_to @feed
   end
 
