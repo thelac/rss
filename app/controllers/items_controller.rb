@@ -91,4 +91,15 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def toggle_starred
+    @item = Item.find(params[:item_id])
+    @item.toggle_starred
+
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
 end

@@ -1,0 +1,7 @@
+var bufferClass = $('#star-<%= @item.id%>').attr('class');
+
+<% if @item.starred? %>
+$('#star-<%= @item.id%>').attr('class', 'starred');
+<% else %>
+$('#star-<%= @item.id%>').attr('class', 'unstarred');
+<% end %>
