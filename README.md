@@ -10,13 +10,16 @@
 - Enforce feed uniqueness
 - Add user - feed relationship
 - Default db population when reset
-- Readability
+- Readability integration
 - OPML import
 
 #### Michael
 - Dashboard default view should have items from all feeds
 - Write update and delete AJAX
 - Item highlighting - semantic information
+- Users page
+- New feed -> feed link only
+- Fix permissioning
 
 ### UX
 - Keyboard shortcuts
