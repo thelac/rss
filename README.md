@@ -18,14 +18,11 @@
 
 #### Michael
 - Dashboard default view should have items from all feeds
-<<<<<<< HEAD
-=======
 - Write update and delete AJAX
 - Item highlighting - semantic information
 - Users view
 - New feed -> feed link only
 - Fix permissioning
->>>>>>> 7216c73b9f48cac1ddfbb4032670a81a0c4c9e91
 
 ### UX
 - Write update and delete AJAX
