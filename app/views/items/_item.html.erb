@@ -8,8 +8,11 @@
 	<%= link_to(item.title, item, remote: true) %>
 
 	<% if item.starred? %>
-	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "starred", :id => "star-" + item.id.to_s )%>
+	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "starred", :id => "star-" + item.id.to_s) %>
 	<% else %>
-	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "unstarred", :id => "star-" + item.id.to_s )%>
+	<%= link_to("star", item_toggle_starred_path(item), remote: true, :class => "unstarred", :id => "star-" + item.id.to_s) %>
 	<% end %>
+
+	<%= link_to("tweet", item_tweet_path(item), remote: true, :class => "twitter", :id => "tweet-" + item.id.to_s) %>
+	<%= link_to("pocket", item_pocket_path(item), remote: true, :class => "pocket", :id => "pocket-" + item.id.to_s) %>
 </div>
