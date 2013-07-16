@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+  class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
   has_many :feeds, inverse_of: :user, dependent: :destroy
@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   before_save :create_remember_token
   before_save { |user| user.email = email.downcase }
 
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: { :on => :create }, length: { minimum: 6, :on => :create }
+  validates :password_confirmation, presence: { :on => :create }
 
   validates :name, presence: true, length: { maximum: 50 }
 
@@ -15,7 +16,13 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
   			uniqueness: { case_sensitive: false }
 
-  validates :password_confirmation, presence: true
+  def twitter
+    @twitter ||= Twitter::Client.new(
+      consumer_key: ENV['TWITTER_CONSUMER_KEY'],
+      consumer_secret: ENV['TWITTER_CONSUMER_SECRET'],
+      oauth_token: twitter_oauth_token, 
+      oauth_token_secret: twitter_oauth_secret)
+  end
 
   private
     def create_remember_token

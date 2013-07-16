@@ -11,6 +11,15 @@ gem "feedzirra", "~> 0.2.0.rc2", :git => 'git://github.com/pauldix/feedzirra.git
 gem 'jquery-ui-rails'
 gem 'whenever', require: false
 
+## Social integration
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'bitly'
+
+## Handling environment variables
+gem 'figaro'
+
 group :development do
 	gem 'sqlite3'
 

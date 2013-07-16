@@ -102,4 +102,15 @@ class ItemsController < ApplicationController
       format.js
     end
   end
+
+  def tweet
+    @item = Item.find(params[:item_id])
+    @item.feed.user.twitter.update(@item.link)
+    flash[:success] = "tweeted!" # TODO: this doesn't actually check for success
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
 end

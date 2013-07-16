@@ -7,17 +7,20 @@
 
 ### Next
 #### Daniel
-- Enforce feed uniqueness
+- Readability
 - Add user - feed relationship
+- Enforce feed uniqueness
 - Default db population when reset
-- Readability integration
 - OPML import
+
+- Adding bitly
+- Adding twitter
 
 #### Michael
 - Dashboard default view should have items from all feeds
 - Write update and delete AJAX
 - Item highlighting - semantic information
-- Users page
+- Users view
 - New feed -> feed link only
 - Fix permissioning
 
@@ -38,6 +41,8 @@
 ### CLEANUP
 - Merge db migrates
 - Update to rails 4
+- Roll our own feed parser
+- Roll our own readability
 
 ### OPTIMIZATIONS
 - Counter cache (unread / read, etc)
