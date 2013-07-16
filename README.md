@@ -25,6 +25,7 @@
 - Fix permissioning
 
 ### UX
+- Write update and delete AJAX
 - Keyboard shortcuts
 - Tags
 - Search through feed items
