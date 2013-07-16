@@ -20,7 +20,7 @@
 - Dashboard default view should have items from all feeds
 - Write update and delete AJAX
 - Item highlighting - semantic information
-- Users view
+- Users view -> account page?
 - New feed -> feed link only
 - Fix permissioning
 

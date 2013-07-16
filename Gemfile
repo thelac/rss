@@ -19,7 +19,10 @@ gem 'twitter'
 gem 'omniauth-pocket'
 gem 'getpocket', github: 'elomar/pocket_api', require: 'pocket_api'
 
-gem 'omniauth-readability'
+# gem 'omniauth-readability'
+# https://github.com/29decibel/readit
+
+# https://github.com/AustinBlues/OPML-Speed-Reader
 
 gem 'bitly'
 
