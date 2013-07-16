@@ -5,6 +5,7 @@ Rss::Application.routes.draw do
     match '/toggle_read', to: 'items#toggle_read'
     match '/toggle_starred', to: 'items#toggle_starred'
     match '/tweet', to: 'items#tweet'
+    match '/pocket', to: 'items#pocket'
   end
   resources :feeds
   resources :users
@@ -21,7 +22,7 @@ Rss::Application.routes.draw do
   match '/test', to: 'static_pages#test'
 
   match '/auth/twitter/callback', to: 'users#add_twitter'
-
+  match '/auth/pocket/callback', to: 'users#add_pocket'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

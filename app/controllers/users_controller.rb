@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
+		def show
 		@user = User.find(params[:id])
 		# raise @user.to_yaml
 	end
@@ -40,6 +40,21 @@ class UsersController < ApplicationController
 	
 		if @user.save
 			flash[:success] = "Twitter added!"
+		else
+			flash[:error] = "Fail" # TODO: update to catch oauth errors
+			raise @user.errors.to_yaml
+		end
+		render :template => 'users/show'
+	end
+
+	def add_pocket
+		@user = current_user
+
+		@user.pocket_oauth_token = env['omniauth.auth']['credentials']['token']
+		@user.pocket_handle = env['omniauth.auth']['info']['nickname']
+
+		if @user.save
+			flash[:success] = "Pocket added!"
 		else
 			flash[:error] = "Fail" # TODO: update to catch oauth errors
 			raise @user.errors.to_yaml

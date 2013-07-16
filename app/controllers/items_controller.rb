@@ -113,4 +113,22 @@ class ItemsController < ApplicationController
       format.js
     end
   end
+
+  def pocket
+    @item = Item.find(params[:item_id])
+
+    # TODO: only need to do once
+    PocketApi.configure(
+      :client_key=> ENV['POCKET_CONSUMER_KEY'], 
+      :access_token => @item.feed.user.pocket_oauth_token)
+
+    PocketApi.add(@item.link)
+
+    flash[:success] = "added!" # TODO: this doesn't actually check for success
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
 end

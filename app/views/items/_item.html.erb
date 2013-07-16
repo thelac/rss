@@ -14,4 +14,5 @@
 	<% end %>
 
 	<%= link_to("tweet", item_tweet_path(item), remote: true, :class => "twitter", :id => "tweet-" + item.id.to_s) %>
+	<%= link_to("pocket", item_pocket_path(item), remote: true, :class => "pocket", :id => "pocket-" + item.id.to_s) %>
 </div>

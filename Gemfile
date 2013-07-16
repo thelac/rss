@@ -15,6 +15,12 @@ gem 'whenever', require: false
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
+
+gem 'omniauth-pocket'
+gem 'getpocket', github: 'elomar/pocket_api', require: 'pocket_api'
+
+gem 'omniauth-readability'
+
 gem 'bitly'
 
 ## Handling environment variables

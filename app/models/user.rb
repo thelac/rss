@@ -16,6 +16,7 @@
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
   			uniqueness: { case_sensitive: false }
 
+  # TODO: Only need to do once
   def twitter
     @twitter ||= Twitter::Client.new(
       consumer_key: ENV['TWITTER_CONSUMER_KEY'],
