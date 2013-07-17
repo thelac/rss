@@ -1,9 +1,15 @@
 <div class="span3">
-<h4>Feed List</h4>
+	<h4>Feed List <%= link_to("View all", dashboard_path ) %></h4>
+
 	<%= link_to("New feed", new_feed_path, remote: true, class: "btn btn-small", id:"new-link") %>
 	<%= render 'feeds/feed_list' %>
 </div>
+
+<div class="span9">
+	<h4>All Items</h4>
+	<%= link_to("Update all", updateall_path, remote: true, class: "btn btn-small", id:"update-all") %>
+</div>
+
 <div class="span9" id="item-list">
 	<%= render allItems %> 
-
 </div>

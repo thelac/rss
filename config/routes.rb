@@ -21,6 +21,8 @@ Rss::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signup', to: 'users#new'
   match '/test', to: 'static_pages#test'
+  
+  match '/updateall', to: 'feeds#updateall'
 
   match '/auth/twitter/callback', to: 'users#add_twitter'
   match '/auth/pocket/callback', to: 'users#add_pocket'

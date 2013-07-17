@@ -103,4 +103,10 @@ class FeedsController < ApplicationController
       format.js
     end
   end
+
+  def updateall
+    current_user.feeds.each do |f|
+      f.update
+    end
+  end
 end
