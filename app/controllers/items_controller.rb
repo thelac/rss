@@ -131,4 +131,33 @@ class ItemsController < ApplicationController
       format.js
     end
   end
+
+  def readability
+    @item = Item.find(params[:item_id])
+
+    # TODO: only need to do this once
+    @token = @item.feed.user.readability_oauth_token
+    @secret = @item.feed.user.readability_oauth_secret
+    @api = Readit::API.new @token, @secret
+
+    @api.bookmark( :url => @item.link )
+
+    # TODO: only need to do once
+    # Readit::Config.consumer_key = ENV['READABILITY_KEY']
+    # Readit::Config.consumer_secret = ENV['READABILITY_READER_KEY']
+    # Readit::Config.parser_token = ENV['READABILITY_PARSER_KEY']
+    # TODO: only need to do once
+    # PocketApi.configure(
+    #   :client_key=> ENV['POCKET_CONSUMER_KEY'], 
+    #   :access_token => @item.feed.user.pocket_oauth_token)
+
+    # PocketApi.add(@item.link)
+
+    flash[:success] = "added!" # TODO: this doesn't actually check for success
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
 end

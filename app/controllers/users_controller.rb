@@ -61,4 +61,25 @@ class UsersController < ApplicationController
 		end
 		render :template => 'users/show'
 	end
+
+	def add_readability
+		@user = current_user
+
+		# raise env['omniauth.auth'].to_yaml
+
+		@user.readability_oauth_token = env['omniauth.auth']['credentials']['token']
+		@user.readability_oauth_secret = env['omniauth.auth']['credentials']['secret']
+		@user.readability_handle = env['omniauth.auth']['uid']
+
+		# @user.pocket_oauth_token = env['omniauth.auth']['credentials']['token']
+		# @user.pocket_handle = env['omniauth.auth']['info']['nickname']
+
+		if @user.save
+			flash[:success] = "Readability added!"
+		else
+			flash[:error] = "Fail" # TODO: update to catch oauth errors
+			raise @user.errors.to_yaml
+		end
+		render :template => 'users/show'
+	end
 end
