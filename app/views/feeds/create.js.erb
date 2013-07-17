@@ -2,7 +2,7 @@ $('#new-form').hide('slide', { direction: 'up' }, function(){
 	$('#new-form').remove();
 });
 
-$('#new-link').show();
+$('#new-link').text('New feed').show();
 
 $newfeed = $('<%= j render(@feed) %>');
 $('#feed-table').append($newfeed)

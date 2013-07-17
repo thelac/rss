@@ -100,6 +100,7 @@ class FeedsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to current_user.dashboard }
       format.json { head :no_content }
+      format.js
     end
   end
 end
