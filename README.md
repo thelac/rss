@@ -18,7 +18,6 @@
 
 #### Michael
 - Dashboard default view should have items from all feeds
-- Write update and delete AJAX
 - Item highlighting - semantic information
 - Users view -> account page?
 - New feed -> feed link only
@@ -63,3 +62,5 @@
 - read / unread
 - Implement scheduled polling
 - Star items
+- Write update and delete AJAX
+
