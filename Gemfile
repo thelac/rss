@@ -22,7 +22,7 @@ gem 'getpocket', github: 'elomar/pocket_api', require: 'pocket_api'
 gem 'omniauth-readability', github: '29decibel/omniauth-readability'
 gem 'readit', github: '29decibel/readit'
 
-# https://github.com/AustinBlues/OPML-Speed-Reader
+gem 'opml_saw', :git => "git://github.com/feedbin/opml_saw.git", :branch => "master"
 
 gem 'bitly'
 

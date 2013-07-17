@@ -56,6 +56,7 @@
 - Email integration
 - OPML import/export
 - Deply cron jobs
+- Integrate Google+, Facebook, Evernote
 
 ## COMPLETED
 - readability integration (basic shit)
