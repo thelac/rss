@@ -22,6 +22,7 @@
 - Users view -> account page?
 - New feed -> feed link only
 - Fix permissioning
+- Add feed error on bad link
 
 ### UX
 - Write update and delete AJAX
