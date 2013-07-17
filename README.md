@@ -17,11 +17,12 @@
 - Readability
 
 #### Michael
-- Dashboard default view should have items from all feeds
+- Dashboard show should indicate source feed
 - Item highlighting - semantic information
 - Users view -> account page?
 - New feed -> feed link only
 - Fix permissioning
+- Add feed error on bad link
 
 ### UX
 - Write update and delete AJAX
