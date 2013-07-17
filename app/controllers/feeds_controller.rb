@@ -75,16 +75,20 @@ class FeedsController < ApplicationController
   def update
     @feed = Feed.find(params[:id])
 
-    counter = @feed.update
+    # counter = @feed.update
 
-    if counter > 0
-      pluralHelper = pluralize(counter, "item").split
-      flash[:success] = pluralHelper[0] + " new " + pluralHelper[1] + "!"
-    else
-      flash[:error] = "No new items :("
+    # if counter > 0
+    #   pluralHelper = pluralize(counter, "item").split
+    #   flash[:success] = pluralHelper[0] + " new " + pluralHelper[1] + "!"
+    # else
+    #   flash[:error] = "No new items :("
+    # end
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :no_content }
+      format.js
     end
-    
-    redirect_to @feed
   end
 
   # DELETE /feeds/1

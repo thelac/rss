@@ -1,2 +1,4 @@
+<%= @feed.update %>
+
 $('#item-list').html('<%= j render(@feed.items.reverse) %>');
 $('#item-list').prepend('<%= link_to "Update", @feed, class: "btn btn-small update-feed", method: 'put', remote: true %>');
