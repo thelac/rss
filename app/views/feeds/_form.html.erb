@@ -1,7 +1,5 @@
 <%= simple_form_for @feed, remote: true, :html => { id: "new-form" } do |f| %>
-  <%= f.input :title %>
   <%= f.input :link %>
-  <%= f.input :description %>
 
   <%= f.submit "Create feed", class: "btn btn-primary btn-small" %>
 
