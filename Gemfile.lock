@@ -1,4 +1,22 @@
 GIT
+  remote: git://github.com/29decibel/omniauth-readability.git
+  revision: 8337b769cd11d142b49a02027d825f42170010c6
+  specs:
+    omniauth-readability (0.0.1)
+      multi_json
+      omniauth (>= 0.2.6)
+      omniauth-oauth (>= 1.0.0.rc2)
+
+GIT
+  remote: git://github.com/29decibel/readit.git
+  revision: f352941719e54cd05c241e56571fd160ab456aa4
+  specs:
+    readit (0.1.0)
+      hashie
+      multi_json
+      oauth
+
+GIT
   remote: git://github.com/elomar/pocket_api.git
   revision: a9ff9a17b7fa73c5759a813a1ea99222c6a211f3
   specs:
@@ -211,9 +229,11 @@ DEPENDENCIES
   nokogiri
   omniauth
   omniauth-pocket
+  omniauth-readability!
   omniauth-twitter
   pg (= 0.12.2)
   rails (= 3.2.13)
+  readit!
   simple_form
   sqlite3
   therubyracer

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716013038) do
+ActiveRecord::Schema.define(:version => 20130717000708) do
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20130716013038) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "password_digest"
     t.string   "remember_token"
     t.integer  "feeds_count"
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(:version => 20130716013038) do
     t.string   "twitter_uid"
     t.string   "pocket_handle"
     t.string   "pocket_oauth_token"
+    t.string   "readability_oauth_token"
+    t.string   "readability_oauth_secret"
+    t.string   "readability_handle"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

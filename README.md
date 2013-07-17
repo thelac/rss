@@ -7,7 +7,6 @@
 
 ### Next
 #### Daniel
-- Readability
 - Add user - feed relationship
 - Enforce feed uniqueness
 - Default db population when reset
@@ -15,6 +14,7 @@
 
 - Adding bitly
 - Adding twitter
+- Readability
 
 #### Michael
 - Dashboard default view should have items from all feeds
