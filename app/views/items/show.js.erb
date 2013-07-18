@@ -1,9 +1,3 @@
-function htmlDecode(input){
-  var e = document.createElement('div');
-  e.innerHTML = input;
-  return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-}
-
 <% if @item.published != nil %>
  	var published = '<%= @item.published.split('.')[0] %>';
 <% end %>
@@ -12,8 +6,6 @@ var bufferClass = $('#item-<%= @item.id%>').attr('class');
 
 if ((bufferClass == 'closed-item unread')
 		|| (bufferClass =='closed-item read')){
-	var html = '<%= @item.description %>';
-	var escape = htmlDecode(html);
 
 	// handle updating unread stuff
 	if (bufferClass == 'closed-item unread') {
@@ -22,14 +14,12 @@ if ((bufferClass == 'closed-item unread')
 		$('#unread-<%= @item.feed.id %>')
 			.html('<%= @item.feed.items.where("read = ?", false).count %>');
 	}
-
+	
 	$('.item-text').remove();
-
 	$('#item-<%= @item.id%>')
 		.attr('class', 'opened-item read')
-		.after('<div class="item-text">' + escape + '</div>');
-
-	$
+		.after('<div class="item-text">'+ '<%=j render 'items/item-text' %>' + '</div>');
+	
 	$('.item-text').append('<div class="published">' + published + '</div>');
 }
 else

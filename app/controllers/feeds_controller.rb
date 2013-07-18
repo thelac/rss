@@ -105,8 +105,17 @@ class FeedsController < ApplicationController
   end
 
   def updateall
+
     current_user.feeds.each do |f|
       f.update
     end
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :no_content }
+      format.js
+    end
+
+
   end
 end
