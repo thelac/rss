@@ -1,4 +1,4 @@
 $('#all-item').remove();
 $('#item-list').html('<%= j render(@feed.items.reverse) %>');
 $('#item-list').prepend('<%= link_to "Update", @feed, class: "btn btn-small update-feed", method: 'put', remote: true %>');
-$('#item-list').before('<h4 class="span9"><%= @feed.title %></h4>');
+$('#item-list').before('<h4 class="span9" id="all-item"><%= @feed.title %></h4>');
