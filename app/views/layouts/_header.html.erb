@@ -4,10 +4,8 @@
       <%= link_to "YARSSR", root_url, class: "brand" %>
       <nav>
         <ul class="nav">
-          <li><%= link_to "Home",   root_url  %></li>
           <% if signed_in? %>
             <li><%= link_to "Account", current_user %></li>
-            <li><%= link_to "Dashboard", current_user.dashboard %></li>
             <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
