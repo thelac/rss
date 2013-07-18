@@ -26,7 +26,6 @@
 - Add user - feed relationship
 - Enforce feed uniqueness
 - Default db population when reset
-
 - HTML rendering
 - New feed -> feed link only
 
