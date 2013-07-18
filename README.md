@@ -8,22 +8,24 @@
 ### Next
 #### Daniel
 - Readability parser
+- Debug + UX stuff
 
+#### Daniel - complete
 - Adding bitly
 - Adding twitter
 - Readability
 - OPML import
-
-### Next next
-- Add user - feed relationship
-- Enforce feed uniqueness
-- Default db population when reset
 
 #### Michael
 - Fix permissioning
 - Dashboard show should indicate source feed
 - Item highlighting - semantic information
 - Add feed error on bad link
+
+### Next next
+- Add user - feed relationship
+- Enforce feed uniqueness
+- Default db population when reset
 
 - HTML rendering
 - New feed -> feed link only
