@@ -82,4 +82,9 @@ class UsersController < ApplicationController
 		end
 		render :template => 'users/show'
 	end
+
+	def upload
+		xml_file = params[:uploaded_file].read
+		raise xml_file.to_yaml
+	end
 end
