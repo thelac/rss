@@ -39,6 +39,7 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(params[:feed])
 
+    # TODO: refactor this ish
     feed = Feedzirra::Feed.fetch_and_parse(@feed[:link])
 
     @feed[:title] = feed.title

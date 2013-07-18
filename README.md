@@ -11,6 +11,7 @@
 - Enforce feed uniqueness
 - Default db population when reset
 - OPML import
+- Readability parser
 
 - Adding bitly
 - Adding twitter
@@ -27,7 +28,7 @@
 ### UX
 - Write update and delete AJAX
 - Keyboard shortcuts
-- Tags
+- Tags / organization
 - Search through feed items
 
 #### Views
@@ -58,6 +59,7 @@
 - OPML import/export
 - Deply cron jobs
 - Integrate Google+, Facebook, Evernote
+- OPML import tags, and other meta-data we're currently ignoring
 
 ## COMPLETED
 - readability integration (basic shit)

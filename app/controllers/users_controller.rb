@@ -83,8 +83,32 @@ class UsersController < ApplicationController
 		render :template => 'users/show'
 	end
 
-	def upload
-		xml_file = params[:uploaded_file].read
-		raise xml_file.to_yaml
+	def upload_opml
+
+		# TODO: add error checking
+		@user = current_user
+		# puts params[:user][:uploaded_file].class.name
+		xml = params[:user][:uploaded_file].read
+
+		parse_opml(xml)
+
+		# raise xml_file.to_yaml
+		# puts xml_file
+		render :template => 'users/show'
+	end
+
+	# TODO: move elsewhere
+	# TODO: add progress indicator
+	def parse_opml(xml)
+		# @user = current_user
+		opml = OpmlSaw::Parser.new(xml)
+		opml.parse
+		opml.feeds.each do |op|
+			feed = Feedzirra::Feed.fetch_and_parse(op[:xml_url])
+			@user.feeds.create(
+				title: op[:text],
+				link: op[:xml_url],
+				description: feed.description)
+		end
 	end
 end

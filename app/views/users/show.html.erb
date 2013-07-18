@@ -5,8 +5,18 @@
 <div class="span6" id="feed-list">
 	
 	<%= render 'feeds/feed_list' %>
-<!-- 
-	<%= form_tag({action: :upload}, multipart: true) do %>
-	  <%= file_field_tag 'picture' %>
-	<% end %> -->
+
+	<%= form_for @user, :url => {:action=>'upload_opml'}, :html=> {:multipart=>true} do |f| %>
+	    <%= f.label :uploaded_file, 'Upload your file.' %>
+	    <%= f.file_field :uploaded_file %>
+		<%= f.submit 'upload' %>
+	<% end %>
+	
+	<div class="add_services">
+		<ul>
+		    <li><%= link_to "Add Twitter", "/auth/twitter"%></li>
+		    <li><%= link_to "Add Pocket", "/auth/pocket"%></li>
+		    <li><%= link_to "Add Readability", "/auth/readability"%></li>
+		</ul>
+	</div>
 </div>

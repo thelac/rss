@@ -1,5 +1,8 @@
 Rss::Application.routes.draw do
 
+  match '/upload_opml', to: 'users#upload_opml'
+  match '/updateall', to: 'feeds#updateall'
+
   resources :dashboards
   resources :items do
     match '/toggle_read', to: 'items#toggle_read'
@@ -21,8 +24,6 @@ Rss::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/signup', to: 'users#new'
   match '/test', to: 'static_pages#test'
-  
-  match '/updateall', to: 'feeds#updateall'
 
   match '/auth/twitter/callback', to: 'users#add_twitter'
   match '/auth/pocket/callback', to: 'users#add_pocket'

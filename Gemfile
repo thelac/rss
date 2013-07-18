@@ -23,6 +23,7 @@ gem 'omniauth-readability', github: '29decibel/omniauth-readability'
 gem 'readit', github: '29decibel/readit'
 
 gem 'opml_saw', :git => "git://github.com/feedbin/opml_saw.git", :branch => "master"
+# https://github.com/thoughtbot/paperclip/
 
 gem 'bitly'
 
