@@ -106,9 +106,9 @@ class UsersController < ApplicationController
 		opml.feeds.each do |op|
 			feed = Feedzirra::Feed.fetch_and_parse(op[:xml_url])
 			@user.feeds.create(
-				title: op[:text],
-				link: op[:xml_url],
-				description: feed.description)
+				title: op[:text] || "No title",
+				link: op[:xml_url] || "No url",
+				description: "No description")
 		end
 	end
 end

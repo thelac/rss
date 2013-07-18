@@ -7,23 +7,26 @@
 
 ### Next
 #### Daniel
-- Add user - feed relationship
-- Enforce feed uniqueness
-- Default db population when reset
-- OPML import
 - Readability parser
 
 - Adding bitly
 - Adding twitter
 - Readability
+- OPML import
+
+### Next next
+- Add user - feed relationship
+- Enforce feed uniqueness
+- Default db population when reset
 
 #### Michael
+- Fix permissioning
 - Dashboard show should indicate source feed
 - Item highlighting - semantic information
-- Users view -> account page?
-- New feed -> feed link only
-- Fix permissioning
 - Add feed error on bad link
+
+- HTML rendering
+- New feed -> feed link only
 
 ### UX
 - Write update and delete AJAX

@@ -14,10 +14,17 @@ class Feed < ActiveRecord::Base
     counter = 0
     itemlist = []
 
+
     feed.entries.each do |item|
-      break if item.title == most_recent.title
-      itemlist += [item]
+      begin
+        break if item.title == most_recent.title
+      rescue Exception => e
+        debugger
+      else
+        itemlist += [item]
+      end
     end
+
 
     itemlist.reverse_each do |item|
           self.items.create( description: item.summary,
