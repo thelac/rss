@@ -9,23 +9,31 @@
 #### Daniel
 - OPML import
 - Readability parser
+- Debug + UX stuff
 
+#### Daniel - complete
 - Adding bitly
 - Adding twitter
 - Readability
+- OPML import
 
 #### Michael
+- Fix permissioning
 - Dashboard show should indicate source feed
 - Item highlighting - semantic information
-- Users view -> account page?
-- New feed -> feed link only
-- Fix permissioning
 - Add feed error on bad link
 - Loading indication on update all
 
 ### Next next
 - Add user - feed relationship
 - Enforce feed uniqueness
+
+### Next next
+- Add user - feed relationship
+- Enforce feed uniqueness
+- Default db population when reset
+- HTML rendering
+- New feed -> feed link only
 
 ### UX
 - Write update and delete AJAX
