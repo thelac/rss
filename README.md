@@ -7,9 +7,6 @@
 
 ### Next
 #### Daniel
-- Add user - feed relationship
-- Enforce feed uniqueness
-- Default db population when reset
 - OPML import
 - Readability parser
 
@@ -24,6 +21,11 @@
 - New feed -> feed link only
 - Fix permissioning
 - Add feed error on bad link
+- Loading indication on update all
+
+### Next next
+- Add user - feed relationship
+- Enforce feed uniqueness
 
 ### UX
 - Write update and delete AJAX
